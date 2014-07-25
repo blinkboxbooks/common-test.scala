@@ -1,4 +1,4 @@
-name := "common-test"
+name := "common-scala-test"
 
 organization := "com.blinkbox.books"
 
