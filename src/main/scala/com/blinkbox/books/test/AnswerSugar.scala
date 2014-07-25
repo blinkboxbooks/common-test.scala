@@ -19,3 +19,9 @@ trait AnswerSugar {
   }
 
 }
+
+/**
+ * Companion object that facilitates the importing of <code>MockitoSugar</code> members as 
+ * an alternative to mixing it in.
+ */
+object AnswerSugar extends AnswerSugar
