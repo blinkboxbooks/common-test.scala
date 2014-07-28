@@ -1,4 +1,4 @@
-# common-config
+# common-scala-test
 
 Contains code for testing your Scala code, building on ScalaTest and Mockito.
 
