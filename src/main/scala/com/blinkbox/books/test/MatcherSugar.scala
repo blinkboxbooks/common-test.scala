@@ -11,15 +11,16 @@ private object MatcherMacros {
 
     object MessageTransformer extends Transformer {
       override def transform(tree: c.universe.Tree): c.universe.Tree = tree match {
-        case Literal(Constant("$PUT_REAL_MESSAGE_HERE$")) => Literal(Constant(show(f)))
+        case Literal(Constant("$$MESSAGE_PLACEHOLDER$$")) => Literal(Constant(description(f)))
         case x => super.transform(x)
       }
+      private def description(f: c.type#Expr[T => Boolean]): String = show(f) // ok but not that pretty
     }
 
     val ast = reify {
       new BaseMatcher[T] {
         override def matches(item: Any): Boolean = f.splice(item.asInstanceOf[T])
-        override def describeTo(description: Description): Unit = description.appendText("$PUT_REAL_MESSAGE_HERE$")
+        override def describeTo(description: Description): Unit = description.appendText("$$MESSAGE_PLACEHOLDER$$")
       }
     }
 
