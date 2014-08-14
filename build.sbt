@@ -10,7 +10,7 @@ scalacOptions := Seq("-unchecked", "-deprecation", "-feature", "-encoding", "utf
 
 libraryDependencies ++= {
   Seq(
-    "org.scalatest"      %% "scalatest"            % "2.2.0",
+    "org.scalatest"      %% "scalatest"            % "2.2.1",
     "junit"               % "junit"                % "4.11",
     "com.novocode"        % "junit-interface"      % "0.10",
     "org.mockito"         % "mockito-core"         % "1.9.5"
