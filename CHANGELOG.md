@@ -1,5 +1,14 @@
 # Change log
 
+## 0.2.1 ([#4](https://git.mobcastdev.com/Platform/common-scala-test/pull/4) 2014-08-14 17:43:51)
+
+Updated scalatest dependency to 2.2.1
+
+### Improvement
+
+- Updated scalatest dependency to 2.2.1
+
+
 ## 0.2.0 ([#3](https://git.mobcastdev.com/Platform/common-scala-test/pull/3) 2014-07-28 09:48:10)
 
 Added sugar for mockito matchers
