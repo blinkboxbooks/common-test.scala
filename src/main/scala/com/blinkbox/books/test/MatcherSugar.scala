@@ -30,6 +30,14 @@ private object MatcherMacros {
 
 trait MatcherSugar {
   implicit def toMatcher[T](f: T => Boolean): Matcher[T] = macro MatcherMacros.toMatcher[T]
+
+  /**
+   * Synonym for Matchers.eq, as that clashes with Scala's standard `eq` method.
+   */
+  def eql[T](arg: T) = {
+    import org.mockito.Matchers.{ eq => matcherEq }
+    matcherEq(arg)
+  }
 }
 
 object MatcherSugar extends MatcherSugar
