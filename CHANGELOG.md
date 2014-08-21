@@ -1,5 +1,14 @@
 # Change log
 
+## 0.2.2 ([#5](https://git.mobcastdev.com/Platform/common-scala-test/pull/5) 2014-08-21 11:37:22)
+
+Added alias for Matchers.eq
+
+### Improvement:
+
+- Added `MatcherSugar.eql`, as an alias for `Matchers.eq` which clashes with Scala's standard `eq` method.
+
+
 ## 0.2.1 ([#4](https://git.mobcastdev.com/Platform/common-scala-test/pull/4) 2014-08-14 17:43:51)
 
 Updated scalatest dependency to 2.2.1
