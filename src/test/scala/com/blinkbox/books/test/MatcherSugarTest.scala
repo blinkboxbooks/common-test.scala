@@ -22,9 +22,15 @@ class MatcherSugarTest extends FunSuite with Matchers with MockitoSugar with Mat
     val testMock = mock[TestTrait]
     testMock.hello("world")
     val exception = intercept[ArgumentsAreDifferent] {
-      verify(testMock).hello(argThat { x: String => x == "wibble"})
+      verify(testMock).hello(argThat { x: String => x == "wibble" })
     }
     exception.getMessage should include regex "x.*==.*wibble"
   }
 
+  test("Should be able to use `eql` as alisas for Matcher.eq") {
+    val testMock = mock[TestTrait]
+    testMock.hello("world")
+    verify(testMock).hello(eql("world"))
+    assert(testMock eq testMock, "Scala's `eq` method shouldn't be hidden")
+  }
 }
