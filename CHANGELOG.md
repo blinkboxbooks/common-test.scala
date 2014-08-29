@@ -1,5 +1,20 @@
 # Change log
 
+## 0.2.3 ([#6](https://git.mobcastdev.com/Platform/common-scala-test/pull/6) 2014-08-29 15:07:19)
+
+Cross compile to Scala 2.11
+
+### Improvements
+
+- Now cross-compiles to Scala 2.11.
+- Updated dependencies to latest versions.
+
+### Notes
+
+- There’s a deprecation warning in one of the macros, but I can’t fix
+it while compiling for 2.10 as the new type only exists in 2.11. It
+seems to work either way though.
+
 ## 0.2.2 ([#5](https://git.mobcastdev.com/Platform/common-scala-test/pull/5) 2014-08-21 11:37:22)
 
 Added alias for Matchers.eq
