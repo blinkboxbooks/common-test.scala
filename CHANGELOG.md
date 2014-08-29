@@ -1,5 +1,11 @@
 # Change log
 
+## 0.3.0 ([#2](https://git.mobcastdev.com/Platform/common-scala-test/pull/2) 2014-07-28 09:37:42)
+
+New feature: FailHelper
+
+This PR contains a new feature for our test library: the FailHelper trait defines a function that can be used in a way similar to the ScalaTest `intercept` and `whenReady` functions to test failing futures and access the exception that caused the failure.
+
 ## 0.2.3 ([#6](https://git.mobcastdev.com/Platform/common-scala-test/pull/6) 2014-08-29 15:07:19)
 
 Cross compile to Scala 2.11
