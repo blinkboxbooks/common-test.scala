@@ -16,13 +16,9 @@ trait FailHelper extends Assertions with AsyncAssertions with PatienceConfigurat
     val at = new AtomicReference[Try[Any]]()
 
     val w = new Waiter
-    f onComplete {
-      case Success(i) =>
-        at.set(Success(i))
-        w.dismiss()
-      case Failure(e) =>
-        at.set(Failure(e))
-        w.dismiss()
+    f onComplete { case result =>
+      at.set(result)
+      w.dismiss()
     }
     w.await()(p)
 
