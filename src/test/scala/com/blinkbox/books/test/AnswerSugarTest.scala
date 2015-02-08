@@ -15,7 +15,7 @@ class AnswerSugarTest extends FunSuite with MockitoSugar with AnswerSugar {
 
   test("Check Answer with no arguments, thenAnswer style") {
     val testMock = mock[TestTrait]
-    when(testMock.noArgs).thenAnswer(() => { "No-args result" })
+    when(testMock.noArgs).thenAnswer(() => "No-args result")
 
     val result = testMock.noArgs
     assert(result == "No-args result")
@@ -23,21 +23,21 @@ class AnswerSugarTest extends FunSuite with MockitoSugar with AnswerSugar {
 
   test("Check Answer with no arguments, doAnswer style") {
     val testMock = mock[TestTrait]
-    doAnswer(() => { "No-args result" }).when(testMock).noArgs
+    doAnswer(() => "No-args result").when(testMock).noArgs
 
     assert(testMock.noArgs == "No-args result")
   }
 
   test("Check Answer with arguments, thenAnswer style") {
     val testMock = mock[TestTrait]
-    when(testMock.withArgs(anyInt)).thenAnswer((inv: InvocationOnMock) => { "Argument: " + inv.getArguments()(0).asInstanceOf[Int] })
+    when(testMock.withArgs(anyInt)).thenAnswer((inv: InvocationOnMock) => "Argument: " + inv.getArguments()(0).asInstanceOf[Int])
 
     assert(testMock.withArgs(42) == "Argument: 42")
   }
 
   test("Check Answer with arguments, doAnswer style") {
     val testMock = mock[TestTrait]
-    doAnswer((inv: InvocationOnMock) => { "Argument: " + inv.getArguments()(0).asInstanceOf[Int] }).when(testMock).withArgs(anyInt)
+    doAnswer((inv: InvocationOnMock) => "Argument: " + inv.getArguments()(0).asInstanceOf[Int]).when(testMock).withArgs(anyInt)
 
     assert(testMock.withArgs(42) == "Argument: 42")
   }
